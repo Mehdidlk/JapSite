@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 import './App.css';
-import Start from './components/Start';
+import Start from './components/Start/Start';
 import Quiz from './data/quiz.json';
 import End from './components/End';
 import Modal from './components/Modal';
@@ -32,7 +32,7 @@ const App = () => {
   const resetClickHandler = () => {
     setActiveQuestion(0);
     setAnswers([]);
-    setStep(2)
+    setStep(1)
     setTime(0)
     interval = setInterval(() => {
       setTime(prevTime => prevTime + 1)
