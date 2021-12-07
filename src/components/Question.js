@@ -8,12 +8,13 @@ const Question = ({ data, onAnswerUpdate, numberOfQuestion, activeQuestion, onSt
         if(e.key === "Enter"){
         if (Value === '') {
             return setError('Veuillez Répondre !');
+            
         }
-        onAnswerUpdate(prevState => [...prevState, { q: data.question, a: Value }]);
+        onAnswerUpdate(prevState => [...prevState, { q: data.kana, a: Value }]);
         setValue('');
         
         if (activeQuestion < numberOfQuestion - 1) {
-            onStepActiveQuestion(activeQuestion + 1);
+            onStepActiveQuestion(Math.floor(Math.random() * (numberOfQuestion - 0 + 1)) + 0);
         } else {
             onSetStep(3);
         }
@@ -24,7 +25,7 @@ const Question = ({ data, onAnswerUpdate, numberOfQuestion, activeQuestion, onSt
         if (Value === '') {
             return setError('Veuillez Répondre !');
         }
-        onAnswerUpdate(prevState => [...prevState, { q: data.question, a: Value }]);
+        onAnswerUpdate(prevState => [...prevState, { q: data.kana, a: Value }]);
         setValue('');
         
         if (activeQuestion < numberOfQuestion - 1) {
@@ -38,7 +39,7 @@ const Question = ({ data, onAnswerUpdate, numberOfQuestion, activeQuestion, onSt
         <div className="card">
             <div className="card-content">
                 <div className="content">
-                    <h2 className="mb-5"> {data.question}</h2>
+                    <h2 className="mb-5"> {data.kana}</h2>
                     <label>
                         Réponse : <input
                                  type="text"

@@ -43,9 +43,9 @@ const App = () => {
     <div className="App">
       {step === 1 && <Start onQuizStart={quizStartHandler} />}
       {step === 2 && <Question
-        data={Quiz.data[activeQuestion]}
+        data={Quiz.Hiragana[activeQuestion]}
         onAnswerUpdate={setAnswers}
-        numberOfQuestion={Quiz.data.length}
+        numberOfQuestion={Quiz.Hiragana.length}
         activeQuestion={activeQuestion}
         onStepActiveQuestion={setActiveQuestion}
         onSetStep={setStep}
@@ -53,7 +53,7 @@ const App = () => {
       />}
       {step === 3 && <End
         results={answers}
-        data={Quiz.data}
+        data={Quiz.Hiragana}
         onReset={resetClickHandler}
         onAnswersCheck={() => setShowModal(true)}
         time={time}
@@ -63,7 +63,7 @@ const App = () => {
       {showModal && <Modal
         onClose={() => setShowModal(false)}
         results={answers}
-        data={Quiz.data}
+        data={Quiz.Hiragana}
       />}
     </div>
   );
