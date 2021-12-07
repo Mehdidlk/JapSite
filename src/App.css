@@ -2,7 +2,7 @@ html,
 body,
 #root {
   height: 100%;
-  background-color: rgb(71, 71, 71);
+  background-color: rgb(91, 39, 211);
 }
 
 .App {
@@ -15,7 +15,9 @@ body,
 .App .card {
   max-width: 100%;
   width: 30%;
-  text-align: center;
+  text-align: center;  
+  background-color: rgb(179, 47, 47);
+  color: rgb(255, 255, 255);
 }
 
 label.radio {
@@ -24,6 +26,7 @@ label.radio {
   padding: 15px;
   margin-bottom: 5px;
   font-size: 20px;
+  
 }
 
 label.radio+.radio {
