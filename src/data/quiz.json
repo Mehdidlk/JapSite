@@ -1,0 +1,62 @@
+{
+    "data": [
+        {
+            "question": "Quel est cet hiragana あ ?",
+            "Choix": [
+                "a",
+                "i",
+                "u",
+                "e",
+                "o"
+            ],
+            "Réponse": "a"
+        },
+        {
+            "question": "Quel est cet hiragana い ?",
+            "Choix": [
+                "a",
+                "i",
+                "u",
+                "e",
+                "o"
+            ],
+            "Réponse": "i"
+        },
+
+        {
+            "question": "Quel est cet hiragana う ?",
+            "Choix": [
+                "a",
+                "i",
+                "u",
+                "e",
+                "o"
+            ],
+            "Réponse": "u"
+        },
+
+        {
+            "question": "Quel est cet hiragana え ?",
+            "Choix": [
+                "a",
+                "i",
+                "u",
+                "e",
+                "o"
+            ],
+            "Réponse": "e"
+        },
+        
+        {
+            "question": "Quel est cet hiragana お ?",
+            "Choix": [
+                "a",
+                "i",
+                "u",
+                "e",
+                "o"
+            ],
+            "Réponse": "o"
+        }
+    ]
+}
