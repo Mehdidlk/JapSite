@@ -7,7 +7,7 @@ const End = ({ results, data, onReset, onAnswersCheck, time }) => {
     useEffect(() => {
         let correct = 0;
         results.forEach((result, index) => {
-            if (result.a === data[index].Réponse) {
+            if (result.a === data[index].roumaji) {
                 correct++;
             }
         });

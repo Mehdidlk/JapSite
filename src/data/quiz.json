@@ -1,7 +1,5 @@
 {
-    "data": [
-        {
-            "Hiragana": [
+    "Hiragana": [
                 {
                   "kana": "あ",
                   "roumaji": "a"
@@ -419,6 +417,4 @@
                   "roumaji": "pyo"
                 }
               ]
-        }
-    ]
 }
