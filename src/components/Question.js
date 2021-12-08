@@ -15,7 +15,7 @@ const Question = ({ data, onAnswerUpdate, numberOfQuestion, onStepActiveQuestion
         onAnswerUpdate(prevState => [...prevState, { q: data.kana, a: Value, r: data.roumaji }]);
         setValue('');
         
-        if (questionRestant <  20) {
+        if (questionRestant <  10) {
             onStepActiveQuestion(Math.floor(Math.random() * (numberOfQuestion - 0 + 1)) + 0);
             setQuestionRestant(questionRestant + 1)
         } else {
@@ -31,7 +31,7 @@ const Question = ({ data, onAnswerUpdate, numberOfQuestion, onStepActiveQuestion
         onAnswerUpdate(prevState => [...prevState, { q: data.kana, a: Value }]);
         setValue('');
         
-        if (questionRestant <  20) {
+        if (questionRestant <  10) {
             onStepActiveQuestion(Math.floor(Math.random() * (numberOfQuestion - 0 + 1)) + 0);
             setQuestionRestant(questionRestant + 1)
         } else {
@@ -49,9 +49,9 @@ const Question = ({ data, onAnswerUpdate, numberOfQuestion, onStepActiveQuestion
                                  type="text"
                                 value={Value}
                                  onChange={e => setValue(e.target.value)}
-                                 autofocus="true"
+                                 autoFocus={true}
                                  onKeyPress={PressENTER}
-                                 class="input is-focused"
+                                 className="input is-focused"
                                   />
                     </label>
                     {error && <div className="has-text-danger">{error}</div>}

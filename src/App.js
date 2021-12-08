@@ -11,7 +11,7 @@ let interval;
 
 const App = () => {
   const [step, setStep] = useState(1);
-  const [activeQuestion, setActiveQuestion] = useState(0);
+  const [activeQuestion, setActiveQuestion] = useState(Math.floor(Math.random() * (Quiz.Hiragana.length - 0 + 1)) + 0);
   const [answers, setAnswers] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [time, setTime] = useState(0);

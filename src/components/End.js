@@ -19,8 +19,8 @@ const End = ({ results, data, onReset, onAnswersCheck, time }) => {
             <div className="card-content">
                 <div className="content">
                     <h3>Vos résultats</h3>
-                    <p>{correctAnswers} sur 20</p>
-                    <p><strong>{Math.floor((correctAnswers / data.length) * 100 )}% </strong></p>
+                    <p>{correctAnswers} sur 10</p>
+                    <p><strong>{Math.floor((correctAnswers / 10) * 100 )}% </strong></p>
                     <button className="button is-info mr-2" onClick={onAnswersCheck}>Regarde tes réponses</button>
                     <button className="button is-info mr-2" onClick={onReset}>Essayez de nouveau</button>
                 </div>
