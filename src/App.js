@@ -8,7 +8,7 @@ import Modal from './components/Modal';
 import Question from './components/Question';
 
 const App = () => {
-  const [typeOfQuestion, setTypeOfQuestion] = useState(Quiz);
+  const [typeOfQuestion, setTypeOfQuestion] = useState(Quiz.data.Hiragana);
   const [step, setStep] = useState(1);
   const [activeQuestion, setActiveQuestion] = useState(Math.floor(Math.random() * (typeOfQuestion.length - 0 + 1)) + 0);  
   const [answers, setAnswers] = useState([]);
@@ -19,7 +19,7 @@ const App = () => {
   }
 
   const resetClickHandler = () => {
-    setActiveQuestion(Math.floor(Math.random() * (20 - 0 + 1)) + 0);
+    setActiveQuestion(Math.floor(Math.random() * (typeOfQuestion.length - 0 + 1)) + 0);
     setAnswers([]);
     setStep(1)
   }
@@ -31,8 +31,7 @@ const App = () => {
       OnsetTypeOfQuestion={setTypeOfQuestion}
       quiz={Quiz} />}
       {step === 2 && <Question
-        data={typeOfQuestion[0]}
-        test={activeQuestion}
+        data={typeOfQuestion[activeQuestion]}
         onAnswerUpdate={setAnswers}
         numberOfQuestion={typeOfQuestion.length}
         onStepActiveQuestion={setActiveQuestion}
