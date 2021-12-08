@@ -51,6 +51,7 @@ const Question = ({ data, onAnswerUpdate, numberOfQuestion, onStepActiveQuestion
                                  onChange={e => setValue(e.target.value)}
                                  autofocus="true"
                                  onKeyPress={PressENTER}
+                                 class="input is-focused"
                                   />
                     </label>
                     {error && <div className="has-text-danger">{error}</div>}
