@@ -14,8 +14,8 @@ const Modal = ({ onClose, results, data }) => {
                         {results.map((result, i) => (
                             <li key={i} className="mb-6">
                                 <p><strong>{result.q}</strong></p>
-                                <p className={result.a === data[i].Réponse ? 'has-background-success has-text-white p-2' : 'has-background-danger has-text-white p-2'}>Your answer: {result.a}</p>
-                                {result.a !== data[i].Réponse && <p className="has-background-link has-text-white p-2">Correct answer: {data[i].Réponse}</p>}
+                                <p className={result.a === data[i].roumaji ? 'has-background-success has-text-white p-2' : 'has-background-danger has-text-white p-2'}>Your answer: {result.a}</p>
+                                {result.a !== data[i].roumaji && <p className="has-background-link has-text-white p-2">Correct answer: {data[i].roumaji}</p>}
                             </li>
                         ))}
                     </ul>

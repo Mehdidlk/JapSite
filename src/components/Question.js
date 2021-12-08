@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 const Question = ({ data, onAnswerUpdate, numberOfQuestion, activeQuestion, onStepActiveQuestion, onSetStep  }) => {
     const [error, setError] = useState('');
     const [Value, setValue] = useState("");
+    const [questionRestant, setQuestionRestant] = useState(0);
+
 
     const PressENTER = (e) => {
         if(e.key === "Enter"){
@@ -13,8 +15,9 @@ const Question = ({ data, onAnswerUpdate, numberOfQuestion, activeQuestion, onSt
         onAnswerUpdate(prevState => [...prevState, { q: data.kana, a: Value }]);
         setValue('');
         
-        if (activeQuestion < numberOfQuestion - 1) {
+        if (questionRestant <  20) {
             onStepActiveQuestion(Math.floor(Math.random() * (numberOfQuestion - 0 + 1)) + 0);
+            setQuestionRestant(questionRestant + 1)
         } else {
             onSetStep(3);
         }
@@ -28,8 +31,9 @@ const Question = ({ data, onAnswerUpdate, numberOfQuestion, activeQuestion, onSt
         onAnswerUpdate(prevState => [...prevState, { q: data.kana, a: Value }]);
         setValue('');
         
-        if (activeQuestion < numberOfQuestion - 1) {
-            onStepActiveQuestion(activeQuestion + 1);
+        if (questionRestant <  20) {
+            onStepActiveQuestion(Math.floor(Math.random() * (numberOfQuestion - 0 + 1)) + 0);
+            setQuestionRestant(questionRestant + 1)
         } else {
             onSetStep(3);
         }
