@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-const End = ({ results, data, onReset, onAnswersCheck, time }) => {
+const End = ({ results, onReset, onAnswersCheck }) => {
     const [correctAnswers, setCorrectAnswers] = useState(0);
 
     useEffect(() => {

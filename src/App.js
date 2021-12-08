@@ -10,56 +10,45 @@ import Question from './components/Question';
 let interval;
 
 const App = () => {
+  const [typeOfQuestion, setTypeOfQuestion] = useState(Quiz);
   const [step, setStep] = useState(1);
-  const [activeQuestion, setActiveQuestion] = useState(Math.floor(Math.random() * (Quiz.Hiragana.length - 0 + 1)) + 0);
+  const [activeQuestion, setActiveQuestion] = useState(Math.floor(Math.random() * (20 - 0 + 1)) + 0);  
   const [answers, setAnswers] = useState([]);
   const [showModal, setShowModal] = useState(false);
-  const [time, setTime] = useState(0);
-
-  useEffect(() => {
-    if (step === 3) {
-      clearInterval(interval);
-    }
-  }, [step]);
 
   const quizStartHandler = () => {
     setStep(2);
-    interval = setInterval(() => {
-      setTime(prevTime => prevTime + 1);
-    }, 1000);
   }
 
   const resetClickHandler = () => {
-    setActiveQuestion(0);
+    setActiveQuestion(Math.floor(Math.random() * (20 - 0 + 1)) + 0);
     setAnswers([]);
     setStep(1)
-    setTime(0)
   }
 
   return (
     <div className="App">
-      {step === 1 && <Start onQuizStart={quizStartHandler} />}
+      {step === 1 && <Start 
+      onQuizStart={quizStartHandler}
+      OnsetTypeOfQuestion={setTypeOfQuestion}
+      quiz={Quiz} />}
       {step === 2 && <Question
-        data={Quiz.Hiragana[activeQuestion]}
+        data={typeOfQuestion[activeQuestion]}
         onAnswerUpdate={setAnswers}
-        numberOfQuestion={Quiz.Hiragana.length}
+        numberOfQuestion={typeOfQuestion.length}
         onStepActiveQuestion={setActiveQuestion}
         onSetStep={setStep}
-
       />}
       {step === 3 && <End
         results={answers}
-        data={Quiz.Hiragana}
+        data={typeOfQuestion}
         onReset={resetClickHandler}
         onAnswersCheck={() => setShowModal(true)}
-        time={time}
       />}
-
-
       {showModal && <Modal
         onClose={() => setShowModal(false)}
         results={answers}
-        data={Quiz.Hiragana}
+        data={typeOfQuestion}
       />}
     </div>
   );

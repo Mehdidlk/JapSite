@@ -20,6 +20,7 @@ const Question = ({ data, onAnswerUpdate, numberOfQuestion, onStepActiveQuestion
             setQuestionRestant(questionRestant + 1)
         } else {
             onSetStep(3);
+            setQuestionRestant(0)
         }
         }
     }
@@ -35,7 +36,8 @@ const Question = ({ data, onAnswerUpdate, numberOfQuestion, onStepActiveQuestion
             onStepActiveQuestion(Math.floor(Math.random() * (numberOfQuestion - 0 + 1)) + 0);
             setQuestionRestant(questionRestant + 1)
         } else {
-            onSetStep(3);
+            onSetStep(3);           
+            setQuestionRestant(0)
         }
     }
 
@@ -43,7 +45,7 @@ const Question = ({ data, onAnswerUpdate, numberOfQuestion, onStepActiveQuestion
         <div className="card">
             <div className="card-content">
                 <div className="content">
-                    <h2 className="mb-5"> {data.kana}</h2>
+                    <h2 className="mb-5">{data.kana}</h2>
                     <label>
                         Réponse : <input
                                  type="text"
