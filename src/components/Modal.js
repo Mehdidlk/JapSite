@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Modal = ({ onClose, results, data }) => {
+const Modal = ({ onClose, results }) => {
     return (
         <div className="modal is-active">
             <div className="modal-background" onClick={onClose}></div>

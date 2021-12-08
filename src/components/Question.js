@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const Question = ({ data, onAnswerUpdate, numberOfQuestion, onStepActiveQuestion, onSetStep}) => {
+const Question = ({ data, onAnswerUpdate, numberOfQuestion, onStepActiveQuestion, onSetStep, test}) => {
     const [error, setError] = useState('');
     const [Value, setValue] = useState("");
     const [questionRestant, setQuestionRestant] = useState(0);
@@ -15,11 +15,12 @@ const Question = ({ data, onAnswerUpdate, numberOfQuestion, onStepActiveQuestion
         onAnswerUpdate(prevState => [...prevState, { q: data.kana, a: Value, r: data.roumaji }]);
         setValue('');
         
-        if (questionRestant <  20) {
+        if (questionRestant <  10) {
             onStepActiveQuestion(Math.floor(Math.random() * (numberOfQuestion - 0 + 1)) + 0);
             setQuestionRestant(questionRestant + 1)
         } else {
             onSetStep(3);
+            setQuestionRestant(0)
         }
         }
     }
@@ -31,11 +32,12 @@ const Question = ({ data, onAnswerUpdate, numberOfQuestion, onStepActiveQuestion
         onAnswerUpdate(prevState => [...prevState, { q: data.kana, a: Value }]);
         setValue('');
         
-        if (questionRestant <  20) {
+        if (questionRestant <  10) {
             onStepActiveQuestion(Math.floor(Math.random() * (numberOfQuestion - 0 + 1)) + 0);
             setQuestionRestant(questionRestant + 1)
         } else {
-            onSetStep(3);
+            onSetStep(3);           
+            setQuestionRestant(0)
         }
     }
 
@@ -43,14 +45,16 @@ const Question = ({ data, onAnswerUpdate, numberOfQuestion, onStepActiveQuestion
         <div className="card">
             <div className="card-content">
                 <div className="content">
-                    <h2 className="mb-5"> {data.kana}</h2>
+                    <h2 className="mb-5">{data.kana}</h2>
+                    {console.log(test)}
                     <label>
                         Réponse : <input
                                  type="text"
                                 value={Value}
                                  onChange={e => setValue(e.target.value)}
-                                 autofocus="true"
+                                 autoFocus={true}
                                  onKeyPress={PressENTER}
+                                 className="input is-focused"
                                   />
                     </label>
                     {error && <div className="has-text-danger">{error}</div>}
