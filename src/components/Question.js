@@ -49,7 +49,7 @@ const Question = ({ data, onAnswerUpdate, numberOfQuestion, onStepActiveQuestion
                     <label>
                         Réponse : <input
                                  type="text"
-                                value={Value}
+                                 value={Value}
                                  onChange={e => setValue(e.target.value)}
                                  autoFocus={true}
                                  onKeyPress={PressENTER}
