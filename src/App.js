@@ -34,9 +34,6 @@ const App = () => {
     setAnswers([]);
     setStep(1)
     setTime(0)
-    interval = setInterval(() => {
-      setTime(prevTime => prevTime + 1)
-    }, 1000);
   }
 
   return (
@@ -46,7 +43,6 @@ const App = () => {
         data={Quiz.Hiragana[activeQuestion]}
         onAnswerUpdate={setAnswers}
         numberOfQuestion={Quiz.Hiragana.length}
-        activeQuestion={activeQuestion}
         onStepActiveQuestion={setActiveQuestion}
         onSetStep={setStep}
 
