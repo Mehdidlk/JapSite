@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const Question = ({ data, onAnswerUpdate, numberOfQuestion, onStepActiveQuestion, onSetStep}) => {
+const Question = ({ data, onAnswerUpdate, numberOfQuestion, onStepActiveQuestion, onSetStep, test}) => {
     const [error, setError] = useState('');
     const [Value, setValue] = useState("");
     const [questionRestant, setQuestionRestant] = useState(0);
@@ -46,6 +46,7 @@ const Question = ({ data, onAnswerUpdate, numberOfQuestion, onStepActiveQuestion
             <div className="card-content">
                 <div className="content">
                     <h2 className="mb-5">{data.kana}</h2>
+                    {console.log(test)}
                     <label>
                         Réponse : <input
                                  type="text"

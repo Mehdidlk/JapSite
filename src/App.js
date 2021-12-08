@@ -7,8 +7,6 @@ import End from './components/End';
 import Modal from './components/Modal';
 import Question from './components/Question';
 
-let interval;
-
 const App = () => {
   const [typeOfQuestion, setTypeOfQuestion] = useState(Quiz);
   const [step, setStep] = useState(1);
@@ -34,6 +32,7 @@ const App = () => {
       quiz={Quiz} />}
       {step === 2 && <Question
         data={typeOfQuestion[activeQuestion]}
+        test={typeOfQuestion}
         onAnswerUpdate={setAnswers}
         numberOfQuestion={typeOfQuestion.length}
         onStepActiveQuestion={setActiveQuestion}
