@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const Question = ({ data, onAnswerUpdate, numberOfQuestion, activeQuestion, onStepActiveQuestion, onSetStep  }) => {
+const Question = ({ data, onAnswerUpdate, numberOfQuestion, onStepActiveQuestion, onSetStep}) => {
     const [error, setError] = useState('');
     const [Value, setValue] = useState("");
     const [questionRestant, setQuestionRestant] = useState(0);
@@ -12,7 +12,7 @@ const Question = ({ data, onAnswerUpdate, numberOfQuestion, activeQuestion, onSt
             return setError('Veuillez Répondre !');
             
         }
-        onAnswerUpdate(prevState => [...prevState, { q: data.kana, a: Value }]);
+        onAnswerUpdate(prevState => [...prevState, { q: data.kana, a: Value, r: data.roumaji }]);
         setValue('');
         
         if (questionRestant <  20) {

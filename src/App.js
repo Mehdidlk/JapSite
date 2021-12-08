@@ -43,7 +43,6 @@ const App = () => {
         data={Quiz.Hiragana[activeQuestion]}
         onAnswerUpdate={setAnswers}
         numberOfQuestion={Quiz.Hiragana.length}
-        activeQuestion={activeQuestion}
         onStepActiveQuestion={setActiveQuestion}
         onSetStep={setStep}
 
