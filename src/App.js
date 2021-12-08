@@ -10,7 +10,7 @@ import Question from './components/Question';
 const App = () => {
   const [typeOfQuestion, setTypeOfQuestion] = useState(Quiz);
   const [step, setStep] = useState(1);
-  const [activeQuestion, setActiveQuestion] = useState(Math.floor(Math.random() * (20 - 0 + 1)) + 0);  
+  const [activeQuestion, setActiveQuestion] = useState(Math.floor(Math.random() * (typeOfQuestion.length - 0 + 1)) + 0);  
   const [answers, setAnswers] = useState([]);
   const [showModal, setShowModal] = useState(false);
 
@@ -31,8 +31,8 @@ const App = () => {
       OnsetTypeOfQuestion={setTypeOfQuestion}
       quiz={Quiz} />}
       {step === 2 && <Question
-        data={typeOfQuestion[activeQuestion]}
-        test={typeOfQuestion}
+        data={typeOfQuestion[0]}
+        test={activeQuestion}
         onAnswerUpdate={setAnswers}
         numberOfQuestion={typeOfQuestion.length}
         onStepActiveQuestion={setActiveQuestion}
