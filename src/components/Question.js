@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const Question = ({ data, onSetQuestionEnCours, nombreDeQuestion, onStepQuestionEnCours, onSetStep}) => {
+const Question = ({ data, onSetQuestionEnCours, nombreDeQuestion, onSetStep, onSetReponse}) => {
     const [error, setError] = useState('');
     const [Value, setValue] = useState("");
     const [questionRestant, setQuestionRestant] = useState(0);
@@ -12,11 +12,11 @@ const Question = ({ data, onSetQuestionEnCours, nombreDeQuestion, onStepQuestion
             return setError('Veuillez Répondre !');
             
         }
-        onSetQuestionEnCours(prevState => [...prevState, { q: data.kana, a: Value, r: data.roumaji }]);
+        onSetReponse(prevState => [...prevState, { q: data.kana, a: Value, r: data.roumaji }]);
         setValue('');
         
         if (questionRestant <  10) {
-            onStepQuestionEnCours(Math.floor(Math.random() * (nombreDeQuestion - 0 + 1)) + 0);
+            onSetQuestionEnCours(Math.floor(Math.random() * (nombreDeQuestion - 0 + 1)) + 0);
             setQuestionRestant(questionRestant + 1)
         } else {
             onSetStep(3);
@@ -33,7 +33,7 @@ const Question = ({ data, onSetQuestionEnCours, nombreDeQuestion, onStepQuestion
         setValue('');
         
         if (questionRestant <  10) {
-            onStepQuestionEnCours(Math.floor(Math.random() * (nombreDeQuestion - 0 + 1)) + 0);
+            onSetQuestionEnCours(Math.floor(Math.random() * (nombreDeQuestion - 0 + 1)) + 0);
             setQuestionRestant(questionRestant + 1)
         } else {
             onSetStep(3);           
