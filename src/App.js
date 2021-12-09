@@ -33,7 +33,7 @@ const App = () => {
 
 
   //On Affiche la Question qui est entrain d'être affiché de façon aléatoire
-  const [questionEnCours, setQuestionEnCours] = useState( Math.floor( Math.random() * (typedeQuiz.length + 1) ) ); 
+  const [questionEnCours, setQuestionEnCours] = useState(Math.floor(Math.random() * (typedeQuiz.length + 1)));
 
 
   //On Stock les réponses que notre utilisateur auras rentrée dans un tableau d'ou les []
@@ -41,6 +41,10 @@ const App = () => {
 
   //On stock la donnée du Modal si il est ouvert ou Non de base elle n'est pas ouvert
   const [showModal, setShowModal] = useState(false);
+
+  
+
+  const [aleatoireQuiz, setAleatoireQuiz] = useState([Quiz.data.Hiragana, Quiz.data.Katakana])
 
 
   //Cette fonction elle fais passer à l'étape 2 le Quizz
@@ -50,11 +54,15 @@ const App = () => {
 
   //Cette fonction elle remets le site à 0
   const ResetQuiz = () => {
-    setQuestionEnCours( Math.floor( Math.random() * ( typedeQuiz.length + 1 ) ) );
+    setQuestionEnCours(Math.floor(Math.random() * (typedeQuiz.length + 1)));
     setReponse([]);
     setStep(1)
   }
 
+ const entierAleatoire = (min, max) =>
+{
+ return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 
 
   //On renvoie notre Affichage Html affiché pour les personnes qui consulte notre site
@@ -66,42 +74,49 @@ const App = () => {
     //On lui envoie aussi dans une variable onsetTypeDeQuiz La fonction pour modifier la valeur de Typedequiz
     //On lui envoie aussi La Data du Quiz dans une Variable Data
     <div className="App">
- 
+
       {
-      step === 1 && 
-      <Start 
-      onStartQuiz={StartQuiz}
-      onSetTypeDeQuiz={setTypeDeQuiz}
-      Quiz={Quiz} 
-      />
+        step === 1 &&
+        <Start
+          onStartQuiz={StartQuiz}
+          onSetTypeDeQuiz={setTypeDeQuiz}
+          Quiz={Quiz}
+          onEntierAleatoire={entierAleatoire}
+          KanaQuiz={aleatoireQuiz}
+        />
       }
 
       {
-      step === 2 && 
-      <Question 
-      data={typedeQuiz[questionEnCours]} 
-      onSetReponse={setReponse} 
-      nombreDeQuestion={typedeQuiz.length}
-      onSetQuestionEnCours={setQuestionEnCours}
-      onSetStep={setStep}
-      />
+        step === 2 &&
+        <Question
+          data={typedeQuiz[questionEnCours]}
+          onSetReponse={setReponse}          
+          onSetTypeDeQuiz={setTypeDeQuiz}          
+          onEntierAleatoire={entierAleatoire}
+          KanaQuiz={aleatoireQuiz}
+          nombreDeQuestion={typedeQuiz.length}
+          onSetQuestionEnCours={setQuestionEnCours}
+          onSetStep={setStep}
+          
+
+        />
       }
 
       {
-      step === 3 && 
-      <End
-        reponse={reponse}
-        data={typedeQuiz}
-        onReset={ResetQuiz}
-        onAnswersCheck={() => setShowModal(true)}
-      />}
+        step === 3 &&
+        <End
+          reponse={reponse}
+          data={typedeQuiz}
+          onReset={ResetQuiz}
+          onAnswersCheck={() => setShowModal(true)}
+        />}
 
-      {showModal && 
-      <Modal
-        onClose={() => setShowModal(false)}
-        results={reponse}
-        data={typedeQuiz}
-      />}
+      {showModal &&
+        <Modal
+          onClose={() => setShowModal(false)}
+          results={reponse}
+          data={typedeQuiz}
+        />}
     </div>
 
   );

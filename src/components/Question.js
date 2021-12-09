@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const Question = ({ data, onSetQuestionEnCours, nombreDeQuestion, onSetStep, onSetReponse}) => {
+const Question = ({ data, onSetQuestionEnCours, nombreDeQuestion, onSetStep, onSetReponse, kanaQuiz, onEntierAleatoire, onSetTypeDeQuiz}) => {
     const [error, setError] = useState('');
     const [Value, setValue] = useState("");
     const [questionRestant, setQuestionRestant] = useState(0);
@@ -29,10 +29,10 @@ const Question = ({ data, onSetQuestionEnCours, nombreDeQuestion, onSetStep, onS
         if (Value === '') {
             return setError('Veuillez Répondre !');
         }
-        onSetQuestionEnCours(prevState => [...prevState, { q: data.kana, a: Value }]);
+        onSetReponse(prevState => [...prevState, { q: data.kana, a: Value }]);
         setValue('');
         
-        if (questionRestant <  10) {
+        if (questionRestant <  10) {           
             onSetQuestionEnCours(Math.floor(Math.random() * (nombreDeQuestion - 0 + 1)) + 0);
             setQuestionRestant(questionRestant + 1)
         } else {
