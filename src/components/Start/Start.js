@@ -36,7 +36,7 @@ const Start = ({ onStartQuiz, onSetTypeDeQuiz, Quiz, onEntierAleatoire, KanaQuiz
                     <h1 className="white">Commencer le Quiz</h1>
                     <p>Bonne chance mon gaw</p>
                     <button className="button is-onfo is-medium accueil" onClick={LancementQuizHiragana}>All Hiragana</button>
-                    <button className="button is-onfo is-medium accueil" onClick={allKana}>Tous les Kana</button>
+                    <button className="button is-onfo is-medium accueil" onClick={LancementQuizKatakana}>Tous les Kana</button>
                     <button className="button is-onfo is-medium accueil" onClick={LancementQuizKatakana}>All Katakana</button>
                 </div>
             </div>
