@@ -42,13 +42,19 @@ const Start = ({ onStartQuiz, onSetTypeDeQuiz, Quiz, onEntierAleatoire, KanaQuiz
                     <button className="button is-onfo is-medium accueil" onClick={LancementQuizKatakana}>Tous les Kana</button>
                     <button className="button is-onfo is-medium accueil" onClick={LancementQuizKatakana}>All Katakana</button>
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
+=======
+>>>>>>> parent of 361306d (Musique lourd ça mère)
                     <ReactAudioPlayer
   src="../../data/Ching-chong.mp3"
   autoPlay="true"
   controls
 />
+<<<<<<< HEAD
+>>>>>>> parent of 361306d (Musique lourd ça mère)
+=======
 >>>>>>> parent of 361306d (Musique lourd ça mère)
                 </div>
             </div>
