@@ -1,22 +1,16 @@
 import React, { useState } from 'react';
 
-<<<<<<< Updated upstream
-const Question = ({ data, onSetQuestionEnCours, nombreDeQuestion, onSetStep, onSetReponse, KanaQuiz, onEntierAleatoire, onSetTypeDeQuiz}) => {
-=======
-
 
 //On crée un const ou on va stocké les variables crée plus tot et celle dont nous aurons besoins 
 
 const Question = ({ data, onSetQuestionEnCours, nombreDeQuestion, onSetStep, onSetReponse, kanaQuiz, onEntierAleatoire, onSetTypeDeQuiz }) => {
     // ici on crée nos variables qui afficheront et qui seront modifiables plus tard avec l'erreur, la valeur mise dans la box et le nombre de question qu'il reste à faire 
->>>>>>> Stashed changes
     const [error, setError] = useState('');
     const [Value, setValue] = useState("");
     const [questionRestant, setQuestionRestant] = useState(0);
 
     //constante pour confirmer notre réponse sans appuyer sur next mais juste avec "Enter" on va lui dire que si e.key et strictement égal on va faire le setReponse plus bas qui va allez stocker notre réponse et si elle est bien juste et égal à ce qu'il ya dans notre data autrement si il n'ya  rien il renvoie une erreur "veullez répondre "
     const PressENTER = (e) => {
-<<<<<<< Updated upstream
         if(e.key === "Enter"){
         if (Value === '') {
             return setError('Veuillez Répondre !');
@@ -33,23 +27,6 @@ const Question = ({ data, onSetQuestionEnCours, nombreDeQuestion, onSetStep, onS
             onSetStep(3);
             setQuestionRestant(0)
         }
-=======
-        if (e.key === "Enter") {
-            if (Value === '') {
-                return setError('Veuillez Répondre !');
-
-            }
-            onSetReponse(prevState => [...prevState, { q: data.kana, a: Value, r: data.roumaji }]);
-            setValue('');
-            //tant que 10 questions n'ont pas été faite c'est une fonction qui va nous donner une réponse aléatoire dans nombre de question et donc fais +1 a questionrestant pour se stop à 10 et si c'est le cas il fais le onSetStep 3 qui nous ammène à End      
-            if (questionRestant < 10) {
-                onSetQuestionEnCours(Math.floor(Math.random() * (nombreDeQuestion - 0 + 1)) + 0);
-                setQuestionRestant(questionRestant + 1)
-            } else {
-                onSetStep(3);
-                setQuestionRestant(0)
-            }
->>>>>>> Stashed changes
         }
     }
 
