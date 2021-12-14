@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-
+// ici c'est la derniere partie du code à la fin du Quiz que  va t-il se passer 
+//
 const End = ({ data, onReset, reponse, onAnswersCheck }) => {
     const [bonneReponse, setBonneReponse] = useState(0);
 

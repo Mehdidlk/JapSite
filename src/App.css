@@ -2,10 +2,14 @@ html,
 body,
 #root {
   height: 100%;
+<<<<<<< Updated upstream
   background: #e96443;  /* fallback for old browsers */
 background: -webkit-linear-gradient(to bottom, #904e95, #e96443);  /* Chrome 10-25, Safari 5.1-6 */
 background: linear-gradient(to bottom, #904e95, #e96443); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
+=======
+  background-color: rgb(107, 107, 107);
+>>>>>>> Stashed changes
 }
 
 .App {
@@ -165,6 +169,7 @@ img {
   border-style: none;
 }
 
+<<<<<<< Updated upstream
 /* Forms
    ========================================================================== */
 
@@ -268,6 +273,14 @@ legend {
 
 progress {
   vertical-align: baseline;
+=======
+.App .card {
+  max-width: 100%;
+  width: 60%;
+  text-align: center;  
+  background-color: rgb(223, 223, 223);
+  color: rgb(0, 0, 0);
+>>>>>>> Stashed changes
 }
 
 /**
