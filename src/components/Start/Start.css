@@ -24,7 +24,13 @@ h2{
 
 label{
   font-family: 'Readex Pro', sans-serif;
-  font-size: 20px;
+}
+
+.audio{
+  position: absolute;
+  top: 10%;
+  right: 10%;
+  border: black solid 1px;
 }
 
 /* CSS */
