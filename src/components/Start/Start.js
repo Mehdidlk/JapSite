@@ -3,7 +3,7 @@ import './Start.css'
 
 
 //On crée notre fonction fléchée avec les paramètres/Props envoyer dans App.js
-const Start = ({ onStartQuiz, onSetTypeDeQuiz, Quiz, onEntierAleatoire, KanaQuiz }) => {
+const Start = ({ onStartQuiz, onSetTypeDeQuiz, Quiz, QuizKana }) => {
 
 
 
@@ -24,8 +24,8 @@ const Start = ({ onStartQuiz, onSetTypeDeQuiz, Quiz, onEntierAleatoire, KanaQuiz
         onStartQuiz()
     }
 
-    const allKana = () => {
-        onSetTypeDeQuiz(KanaQuiz[onEntierAleatoire(1, 0)])
+    const LancementKana = () => {
+        onSetTypeDeQuiz(QuizKana.data.Kana)
         onStartQuiz()
     }
 
@@ -38,7 +38,7 @@ const Start = ({ onStartQuiz, onSetTypeDeQuiz, Quiz, onEntierAleatoire, KanaQuiz
                     <h1 className="white">Commencer le Quiz</h1>
                     <p>Bonne chance mon gaw</p>
                     <button className="button is-onfo is-medium accueil" onClick={LancementQuizHiragana}>All Hiragana</button>
-                    <button className="button is-onfo is-medium accueil" onClick={LancementQuizKatakana}>Tous les Kana</button>
+                    <button className="button is-onfo is-medium accueil" onClick={LancementKana}>Tous les Kana</button>
                     <button className="button is-onfo is-medium accueil" onClick={LancementQuizKatakana}>All Katakana</button>
                 </div>
             </div>

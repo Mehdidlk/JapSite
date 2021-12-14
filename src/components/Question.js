@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 
 //On crée un const ou on va stocké les variables crée plus tot et celle dont nous aurons besoins 
 
-const Question = ({ data, onSetQuestionEnCours, nombreDeQuestion, onSetStep, onSetReponse, kanaQuiz, onEntierAleatoire, onSetTypeDeQuiz }) => {
+const Question = ({ data, onSetQuestionEnCours, nombreDeQuestion, onSetStep, onSetReponse }) => {
     // ici on crée nos variables qui afficheront et qui seront modifiables plus tard avec l'erreur, la valeur mise dans la box et le nombre de question qu'il reste à faire 
     const [error, setError] = useState('');
     const [Value, setValue] = useState("");

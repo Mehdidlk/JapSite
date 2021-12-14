@@ -9,6 +9,7 @@ import './App.css';
 
 //On import la data (Hiragana, Katakana) et on l'as stock dans une variable Quiz
 import Quiz from './data/quiz.json';
+import QuizKana from './data/quizKana.json';
 
 //On import les Components de notre application (L'affiche)
 //On pourras s'en servir comme balise HTML car elle renvoie des balises dans sont return
@@ -16,6 +17,7 @@ import Start from './components/Start/Start';
 import End from './components/End';
 import Modal from './components/Modal';
 import Question from './components/Question';
+
 
 import ReactAudioPlayer from 'react-audio-player';
 
@@ -42,10 +44,6 @@ const App = () => {
 
   //On stock la donnée du Modal si il est ouvert ou Non de base elle n'est pas ouvert
   const [showModal, setShowModal] = useState(false);
-
-  
-
-  const [aleatoireQuiz, setAleatoireQuiz] = useState([Quiz.data.Hiragana, Quiz.data.Katakana])
 
 
   //Cette fonction elle fais passer à l'étape 2 le Quizz
@@ -87,26 +85,22 @@ const App = () => {
           onStartQuiz={StartQuiz}
           onSetTypeDeQuiz={setTypeDeQuiz}
           Quiz={Quiz}
+          QuizKana={QuizKana}
           onEntierAleatoire={entierAleatoire}
-          KanaQuiz={aleatoireQuiz}
         />
       }
 
       {
         step === 2 &&
-        <Question
-          data={typedeQuiz[questionEnCours]}
-          onSetReponse={setReponse}          
-          onSetTypeDeQuiz={setTypeDeQuiz}          
-          onEntierAleatoire={entierAleatoire}
-          KanaQuiz={aleatoireQuiz}
-          nombreDeQuestion={typedeQuiz.length}
-          onSetQuestionEnCours={setQuestionEnCours}
-          onSetStep={setStep}
-          
-
-        />
-      }
+      <Question
+  data={typedeQuiz[questionEnCours]}
+  onSetReponse={setReponse}          
+  onSetTypeDeQuiz={setTypeDeQuiz}          
+  onEntierAleatoire={entierAleatoire}
+  nombreDeQuestion={typedeQuiz.length}
+  onSetQuestionEnCours={setQuestionEnCours}
+  onSetStep={setStep}
+/>}
 
       {
         step === 3 &&
