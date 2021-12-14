@@ -19,6 +19,7 @@ import Question from './components/Question';
 
 
 
+
 //On crée notre fonction Fléchée (Rafc) App
 const App = () => {
 
@@ -74,7 +75,6 @@ const App = () => {
     //On lui envoie aussi dans une variable onsetTypeDeQuiz La fonction pour modifier la valeur de Typedequiz
     //On lui envoie aussi La Data du Quiz dans une Variable Data
     <div className="App">
-
       {
         step === 1 &&
         <Start

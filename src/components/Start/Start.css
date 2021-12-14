@@ -22,6 +22,11 @@ h2{
   font-size: 70px;
 }
 
+label{
+  font-family: 'Readex Pro', sans-serif;
+  font-size: 20px;
+}
+
 /* CSS */
 .button {
   background-image: linear-gradient(92.88deg, #904e95 9.16%, #904e95 43.89%, #904e95 64.72%);
