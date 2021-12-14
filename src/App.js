@@ -19,9 +19,6 @@ import Question from './components/Question';
 
 
 
-import ReactAudioPlayer from 'react-audio-player';
-
-
 
 //On crée notre fonction Fléchée (Rafc) App
 const App = () => {
@@ -78,13 +75,6 @@ const App = () => {
     //On lui envoie aussi dans une variable onsetTypeDeQuiz La fonction pour modifier la valeur de Typedequiz
     //On lui envoie aussi La Data du Quiz dans une Variable Data
     <div className="App">
-
-<ReactAudioPlayer
-  src="Ching-chong.mp3"
-  autoPlay={true}
-  controls
-  className="audio"
-/>
       {
         step === 1 &&
         <Start

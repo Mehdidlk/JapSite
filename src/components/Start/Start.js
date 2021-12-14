@@ -1,6 +1,8 @@
 import React from "react";
 import './Start.css'
 
+import ReactAudioPlayer from 'react-audio-player';
+
 //On crée notre fonction fléchée avec les paramètres/Props envoyer dans App.js
 const Start = ({ onStartQuiz, onSetTypeDeQuiz, Quiz, onEntierAleatoire, KanaQuiz }) => {
 
@@ -39,7 +41,15 @@ const Start = ({ onStartQuiz, onSetTypeDeQuiz, Quiz, onEntierAleatoire, KanaQuiz
                     <button className="button is-onfo is-medium accueil" onClick={LancementQuizHiragana}>All Hiragana</button>
                     <button className="button is-onfo is-medium accueil" onClick={LancementQuizKatakana}>Tous les Kana</button>
                     <button className="button is-onfo is-medium accueil" onClick={LancementQuizKatakana}>All Katakana</button>
+<<<<<<< HEAD
 
+=======
+                    <ReactAudioPlayer
+  src="../../data/Ching-chong.mp3"
+  autoPlay="true"
+  controls
+/>
+>>>>>>> parent of 361306d (Musique lourd ça mère)
                 </div>
             </div>
         </div>
