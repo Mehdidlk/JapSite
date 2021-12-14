@@ -51,6 +51,7 @@ const Question = ({ data, onSetQuestionEnCours, nombreDeQuestion, onSetStep, onS
             <div className="card-content">
                 <div className="content">
                     <h2 className="mb-5">{data.kana}</h2>
+                    {console.log(data["type"].includes("gojuuon"))}
                     <label>
                         Réponse : <input
                             type="text"
