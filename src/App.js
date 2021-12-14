@@ -46,8 +46,6 @@ const App = () => {
   const [showModal, setShowModal] = useState(false);
 
 
-  const [nombreQuestion, setNombreQuestion] = useState(10);
-
   //Cette fonction elle fais passer à l'étape 2 le Quizz
   const StartQuiz = () => {
     setStep(2);
@@ -89,8 +87,6 @@ const App = () => {
           Quiz={Quiz}
           QuizKana={QuizKana}
           onEntierAleatoire={entierAleatoire}
-          onsetNombreQuestion={setNombreQuestion}
-          onNombreQuestion={nombreQuestion}
         />
       }
 

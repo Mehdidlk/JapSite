@@ -1,11 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React , {useState}from "react";
 import './Start.css'
 
 
 //On crée notre fonction fléchée avec les paramètres/Props envoyer dans App.js
-const Start = ({ onStartQuiz, onSetTypeDeQuiz, Quiz, QuizKana ,onsetNombreQuestion, onNombreQuestion }) => {
+const Start = ({ onStartQuiz, onSetTypeDeQuiz, Quiz, QuizKana }) => {
 
 
+    const [nombreQuestion, setNombreQuestion] = useState(10);
 
     //Notre fonction Lance le Quiz avec les Hiragana
     //On vas dire a TypeDeQuiz dans App.Js On utilise le quiz hiragana
@@ -31,16 +32,10 @@ const Start = ({ onStartQuiz, onSetTypeDeQuiz, Quiz, QuizKana ,onsetNombreQuesti
 
     const PressENTER = (e) => {
         if(e.key === "Enter"){
-            onsetNombreQuestion("");
+            setNombreQuestion("");
         }
     }
 
-    useEffect(() => {
-        effect
-        return () => {
-            cleanup
-        }
-    }, [input])
 
 
 
@@ -49,15 +44,18 @@ const Start = ({ onStartQuiz, onSetTypeDeQuiz, Quiz, QuizKana ,onsetNombreQuesti
             <div className="card-content">
                 <div className="content">
                     <h1 className="white">Commencer le Quiz</h1>
-                    <p>Nombre de Question : {onNombreQuestion}</p>
+                    <p>Nombre de Question : {nombreQuestion}</p>
+                    {console.log(nombreQuestion)}
                     <button className="button is-onfo is-medium accueil" onClick={LancementQuizHiragana}>All Hiragana</button>
                     <button className="button is-onfo is-medium accueil" onClick={LancementKana}>Tous les Kana</button>
                     <button className="button is-onfo is-medium accueil" onClick={LancementQuizKatakana}>All Katakana</button>
                     <label>
                         <input
-                            type="text"
-                            value={onNombreQuestion}
-                            onChange={e => onsetNombreQuestion(e.target.onsetNombreQuestion)}
+                            type="number"
+                            min="0" 
+                            max="50"
+                            value={nombreQuestion}
+                            onChange={e => setNombreQuestion(e.currentTarget.nombreQuestion)}
                             autoFocus={true}
                             onKeyPress={PressENTER}
                             className="input is-focused"
