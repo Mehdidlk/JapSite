@@ -1,5 +1,4 @@
 import React , {useState}from "react";
-import './Start.css'
 
 
 //On crée notre fonction fléchée avec les paramètres/Props envoyer dans App.js

@@ -1,19 +1,45 @@
 html,
 body,
 #root {
+ 
+  font-family: 'Readex Pro', sans-serif;
   height: 100%;
   background: #e96443;  /* fallback for old browsers */
 background: -webkit-linear-gradient(to bottom, #904e95, #e96443);  /* Chrome 10-25, Safari 5.1-6 */
 background: linear-gradient(to bottom, #904e95, #e96443); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-
-.App {
+.titres {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  height: 100%;
 }
+
+.titre {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: aliceblue;
+}
+
+.sous-titre {
+  color: aliceblue;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 20px;
+  justify-content: center;
+}
+
+.logo {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+.Top{
+  display: flex;
+  justify-content: end;
+}
+
 
 
 /* Document

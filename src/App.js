@@ -19,6 +19,9 @@ import Modal from './components/Modal';
 import Question from './components/Question';
 
 
+import { Accueil } from './pages/Accueil';
+
+
 import ReactAudioPlayer from 'react-audio-player';
 
 
@@ -72,55 +75,63 @@ const App = () => {
     //On lui Envoie Dans une Variable onQuizStart la fonction StartQuiz
     //On lui envoie aussi dans une variable onsetTypeDeQuiz La fonction pour modifier la valeur de Typedequiz
     //On lui envoie aussi La Data du Quiz dans une Variable Data
-    <div className="App">
-      <ReactAudioPlayer
-  src="my_audio_file.ogg"
-  autoPlay={true}
-  controls
-  className='audio'
-/>
-      {
-        step === 1 &&
-        <Start
-          onStartQuiz={StartQuiz}
-          onSetTypeDeQuiz={setTypeDeQuiz}
-          Quiz={Quiz}
-          QuizKana={QuizKana}
-          onEntierAleatoire={entierAleatoire}
-        />
-      }
+  
+<div className="App">
+    <Accueil/>
 
-      {
-        step === 2 &&
-      <Question
-  data={typedeQuiz[questionEnCours]}
-  onSetReponse={setReponse}          
-  onSetTypeDeQuiz={setTypeDeQuiz}          
-  onEntierAleatoire={entierAleatoire}
-  nombreDeQuestion={typedeQuiz.length}
-  onSetQuestionEnCours={setQuestionEnCours}
-  onSetStep={setStep}
-/>}
-
-      {
-        step === 3 &&
-        <End
-          reponse={reponse}
-          data={typedeQuiz}
-          onReset={ResetQuiz}
-          onAnswersCheck={() => setShowModal(true)}
-        />}
-
-      {showModal &&
-        <Modal
-          onClose={() => setShowModal(false)}
-          results={reponse}
-          data={typedeQuiz}
-        />}
-    </div>
+ </div>
 
   );
 }
 
 
 export default App;
+
+
+
+/*
+<div className="App">
+      <ReactAudioPlayer
+  src="my_audio_file.ogg"
+  autoPlay={true}
+  controls
+  className='audio'
+/>
+{
+  step === 1 &&
+  <Start
+    onStartQuiz={StartQuiz}
+    onSetTypeDeQuiz={setTypeDeQuiz}
+    Quiz={Quiz}
+    QuizKana={QuizKana}
+    onEntierAleatoire={entierAleatoire}
+  />
+}
+
+{
+  step === 2 &&
+<Question
+data={typedeQuiz[questionEnCours]}
+onSetReponse={setReponse}          
+onSetTypeDeQuiz={setTypeDeQuiz}          
+onEntierAleatoire={entierAleatoire}
+nombreDeQuestion={typedeQuiz.length}
+onSetQuestionEnCours={setQuestionEnCours}
+onSetStep={setStep}
+/>}
+
+{
+  step === 3 &&
+  <End
+    reponse={reponse}
+    data={typedeQuiz}
+    onReset={ResetQuiz}
+    onAnswersCheck={() => setShowModal(true)}
+  />}
+
+{showModal &&
+  <Modal
+    onClose={() => setShowModal(false)}
+    results={reponse}
+    data={typedeQuiz}
+  />}*/
